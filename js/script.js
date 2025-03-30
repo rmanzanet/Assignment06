@@ -38,16 +38,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // CREATE THE DELETE BUTTON
         let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
+        deleteBtn.textContent = "X";
         deleteBtn.classList.add("btn", "btn-danger");
         deleteBtn.addEventListener("click", (e) => {
             if (confirm("Are you sure you want to delete this employee?")) {
                 let row = e.target.closest("tr");
-                if (row.rowIndex > 0) { // Ensure headers are not deleted
-                    empTable.deleteRow(row.rowIndex);
-                    employeeCount--;
-                    empCount.textContent = employeeCount;
-                }
+                empTable.deleteRow(row.rowIndex); // Delete row directly
+                employeeCount--;
+                empCount.textContent = employeeCount;
             }
         });
         cellDelete.appendChild(deleteBtn);
