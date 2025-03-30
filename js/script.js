@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
-    const form = document.querySelector("#empForm");
-    const empTable = document.querySelector("#empTable tbody");
+    const form = document.querySelector("#addForm");
+    const empTable = document.querySelector("#employees tbody");
     const empCount = document.querySelector("#empCount");
     
     // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // GET THE VALUES FROM THE TEXT BOXES
         const id = document.querySelector("#id").value;
         const name = document.querySelector("#name").value;
-        const ext = document.querySelector("#ext").value;
+        const ext = document.querySelector("#extension").value; // Fixed ID
         const email = document.querySelector("#email").value;
         const department = document.querySelector("#department").value;
 
