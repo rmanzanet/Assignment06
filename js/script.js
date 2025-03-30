@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
     const form = document.querySelector("#addForm");
-    const empTable = document.querySelector("#employees").getElementsByTagName('tbody')[0];
+    const empTable = document.querySelector("#employees");
     const empCount = document.querySelector("#empCount");
     
     // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const department = document.querySelector("#department").value;
 
         // INSERT A NEW ROW AT THE END OF THE EMPLOYEES TABLE
-        let newRow = empTable.insertRow();
+        let newRow = empTable.insertRow(-1);
 
         // INSERT A CELL FOR EACH ITEM WITHIN THE NEW ROW
         let cellId = newRow.insertCell(0);
@@ -38,14 +38,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // CREATE THE DELETE BUTTON
         let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "X";
+        deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("btn", "btn-danger");
         deleteBtn.addEventListener("click", (e) => {
             if (confirm("Are you sure you want to delete this employee?")) {
-                let row = e.target.parentElement.parentElement;
-                empTable.deleteRow(row.rowIndex - 1);
-                employeeCount--;
-                empCount.textContent = employeeCount;
+                let row = e.target.closest("tr");
+                if (row.rowIndex > 0) { // Ensure headers are not deleted
+                    empTable.deleteRow(row.rowIndex);
+                    employeeCount--;
+                    empCount.textContent = employeeCount;
+                }
             }
         });
         cellDelete.appendChild(deleteBtn);
