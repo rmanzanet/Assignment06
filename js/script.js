@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // GET THE VALUES FROM THE TEXT BOXES
         const id = document.querySelector("#id").value;
         const name = document.querySelector("#name").value;
-        const ext = document.querySelector("#extension").value; // Fixed ID
+        const ext = document.querySelector("#extension").value; 
         const email = document.querySelector("#email").value;
         const department = document.querySelector("#department").value;
 
@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // CREATE THE DELETE BUTTON
         let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
+        deleteBtn.textContent = "X";
         deleteBtn.classList.add("btn", "btn-danger");
         deleteBtn.addEventListener("click", (e) => {
             if (confirm("Are you sure you want to delete this employee?")) {
