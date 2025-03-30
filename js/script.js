@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // CREATE THE DELETE BUTTON
         let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
+        deleteBtn.textContent = "X";
         deleteBtn.classList.add("btn", "btn-danger");
         deleteBtn.addEventListener("click", (e) => {
             if (confirm("Are you sure you want to delete this employee?")) {
