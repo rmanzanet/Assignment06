@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
     const form = document.querySelector("#addForm");
-    const empTable = document.querySelector("#employees tbody");
+    const empTable = document.querySelector("#employees").getElementsByTagName('tbody')[0];
     const empCount = document.querySelector("#empCount");
     
     // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // GET THE VALUES FROM THE TEXT BOXES
         const id = document.querySelector("#id").value;
         const name = document.querySelector("#name").value;
-        const ext = document.querySelector("#extension").value; 
+        const ext = document.querySelector("#extension").value;
         const email = document.querySelector("#email").value;
         const department = document.querySelector("#department").value;
 
@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // CREATE THE DELETE BUTTON
         let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "X";
+        deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("btn", "btn-danger");
         deleteBtn.addEventListener("click", (e) => {
             if (confirm("Are you sure you want to delete this employee?")) {
